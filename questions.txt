@@ -1,10 +1,18 @@
 1. What is the ~/.railsrc file for?
 
+  -it lets you store defult settings for "rails new"
+
 2. What is a closure in JavaScript? How do you create a closure in Ruby?
 
-3. What is a serializer in Rails API and why do we need it?
+  -it is a function in which all the variable values that were defined when the function was defined persist.
+  -in Ruby, you can put the variables in a block
 
-4. Does Backbone have two-way data binding? Explain. 
+3. What is a serializer in Rails API and why do we need it?
+  -A serializer translates JSON input into ActiveRecord objects.  We need it because we will be getting JSON from the API but we want to manipulate AR objects in the frontend.
+
+4. Does Backbone have two-way data binding? Explain.
+  -Backbone does have two-way data binding available.  Explanation to follow.
+
 
 5. In views/show.js, what is the el property for an instance of ShowView?
 

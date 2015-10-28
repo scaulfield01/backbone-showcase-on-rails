@@ -7,16 +7,25 @@ app.ShowView = Backbone.View.extend({
 
   // fill in the click events for delete and update buttons
   events: {
+    'click .delete': 'deleteShow',
+    'click .update': 'updateShow'
   },
 
   render: function() {
-    // fill in the render function
+    this.$el.html(this.template(this.model.attributes));
     return this;
   },
 
-  // fill in
-  deleteShow: function() {
+  initialize: function() {
+    this.template = _.template($('#showTemplate').html());
+    this.render();
   },
+
+    deleteShow: function() {
+    this.model.destroy(); // removes it from persistent data store
+    this.remove(); // deletes the view
+  }
+
 
   // EDITING A SHOW: IMPLEMENTATION CONSIDERATIONS
   // - The view needs a way to know whether it's in editing mode or not
@@ -26,4 +35,4 @@ app.ShowView = Backbone.View.extend({
   // - Write a function to serialize the update form
   // - In that function, save your updated data using the set function on models
   // - Don't forget to save and render the view again with the updated info
-})
+});
